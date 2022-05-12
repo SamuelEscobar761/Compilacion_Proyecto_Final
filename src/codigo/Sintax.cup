@@ -1,0 +1,26 @@
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+    public Symbol getS(){
+        return this.s;
+    }
+:};
+
+terminal Identificador, Igual, Numero, Coseno, Seno, Tangente, Error;
+non terminal INICIO, SENTENCIA, FUNCION;
+
+start with INICIO;
+INICIO ::= SENTENCIA
+;
+SENTENCIA ::= SENTENCIA Identificador Igual FUNCION Numero | Identificador Igual FUNCION Numero
+;
+FUNCION ::= Coseno | Seno | Tangente
+;
