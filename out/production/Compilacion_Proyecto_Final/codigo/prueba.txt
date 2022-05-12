@@ -1,0 +1,3 @@
+id1 = Coseno 120
+id2 = Seno 20
+id3 = Tangente 30
